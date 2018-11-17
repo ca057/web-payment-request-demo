@@ -2,12 +2,12 @@ const AVAILABLE_ITEMS = {
   'cinnamon-bun': {
     id: 'cinnamon-bun',
     name: 'Cinnamon Bun',
-    price: 1.4
+    price: 140
   },
   'pain-au-raisin': {
     id: 'pain-au-raisin',
     name: 'Pain de Roisins',
-    price: 1.3
+    price: 130
   }
 }
 

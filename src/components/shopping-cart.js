@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
+import { getDisplayPrice } from '../utils'
+
 const ShoppingCart = ({
   availableItems,
   selectedItems,
@@ -40,12 +42,14 @@ const ShoppingCart = ({
           {' '}
           from the list above!
         </p>}
-      {itemList.map(({ id, amount, name, total }) => (
-        <p key={id}>{`${amount} x ${name} (${total}€)`}</p>
-      ))}
+      <ul>
+        {itemList.map(({ id, amount, name, total }) => (
+          <li key={id}>{`${amount} x ${name} (${getDisplayPrice(total)}€)`}</li>
+        ))}
+      </ul>
       {showPayButton &&
         <button type='button' onClick={onCheckout}>
-          {`Pay ${overallTotal}€`}
+          {`Pay ${getDisplayPrice(overallTotal)}€`}
         </button>}
       {showSuccessMessage && <p>Your payment was successful!</p>}
       {showErrorMessage && <p>There was an error while paying!</p>}

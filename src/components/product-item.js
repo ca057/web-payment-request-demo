@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import { getDisplayPrice } from '../utils'
+
 class ProductItem extends Component {
   handleAdd = () => {
     const { id, onItemSelection } = this.props
@@ -16,7 +18,7 @@ class ProductItem extends Component {
     const { name, price, inSelection } = this.props
     return (
       <div className='product-item'>
-        <p>{`${name} - ${price}€`}</p>
+        <p>{`${name} - ${getDisplayPrice(price)}€`}</p>
         <div>
           {inSelection &&
             <button type='button' onClick={this.handleRemove}>
