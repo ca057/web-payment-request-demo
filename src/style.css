@@ -1,5 +1,7 @@
 :root {
   --color-grey: #555;
+  --color-success: #2a2;
+  --color-error: #c41;
 }
 
 * {
@@ -75,4 +77,14 @@ button {
 
 li {
   margin: 0.5em auto;
+}
+
+.success {
+  color: var(--color-success);
+  font-weight: bold;
+}
+
+.error {
+  color: var(--color-error);
+  font-weight: bold;
 }

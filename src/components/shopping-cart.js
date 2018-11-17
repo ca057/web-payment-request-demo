@@ -51,8 +51,10 @@ const ShoppingCart = ({
         <button type='button' onClick={onCheckout}>
           {`Pay ${getDisplayPrice(overallTotal)}€`}
         </button>}
-      {showSuccessMessage && <p>Your payment was successful!</p>}
-      {showErrorMessage && <p>There was an error while paying!</p>}
+      {showSuccessMessage &&
+        <p className='success'>Your payment was successful!</p>}
+      {showErrorMessage &&
+        <p className='error'>There was an error while paying!</p>}
     </Fragment>
   )
 }
