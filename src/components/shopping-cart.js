@@ -48,9 +48,11 @@ const ShoppingCart = ({
         ))}
       </ul>
       {showPayButton &&
-        <button type='button' onClick={onCheckout}>
-          {`Pay ${getDisplayPrice(overallTotal)}€`}
-        </button>}
+        <div className='checkout-button-container'>
+          <button className='checkout' type='button' onClick={onCheckout}>
+            {`Pay ${getDisplayPrice(overallTotal)}€`}
+          </button>
+        </div>}
       {showSuccessMessage &&
         <p className='success'>Your payment was successful!</p>}
       {showErrorMessage &&

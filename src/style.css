@@ -2,6 +2,8 @@
   --color-grey: #555;
   --color-success: #2a2;
   --color-error: #c41;
+  --color-accent: #fc0;
+  --color-accent-light: #eecc5522;
 }
 
 * {
@@ -34,7 +36,7 @@ main {
 }
 
 .headline {
-  background-color: #fc0;
+  background-color: var(--color-accent);
   text-orientation: mixed;
   padding: 5px;
   margin: 0;
@@ -73,6 +75,20 @@ button {
   margin: 0.5em;
   padding: 0.5em 1em;
   border-radius: 0.5em;
+}
+
+button.checkout {
+  background-color: var(--color-accent-light);
+  border-color: var(--color-accent);
+  font-size: 1rem;
+  width: 50%;
+}
+
+.checkout-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
 }
 
 li {
