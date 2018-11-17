@@ -40,11 +40,10 @@ class App extends PureComponent {
     })
   }
 
-  handleCheckout = () => {
+  handleCheckout = async () => {
     const { selectedItems } = this.state
-    processPayment(selectedItems).then(successfulPayment =>
-      this.setState({ successfulPayment, selectedItems: {} })
-    )
+    const successfulPayment = await processPayment(selectedItems)
+    this.setState({ successfulPayment, selectedItems: {} })
   }
 
   render () {
@@ -53,7 +52,7 @@ class App extends PureComponent {
     return (
       <div className='app'>
         <div className='headline'>
-          <h1>Pastry shop</h1>
+          <h1><span aria-label='croissant' role='img'>🥐</span> Pastry shop</h1>
         </div>
         <main>
           <ProductSelection

@@ -1,6 +1,6 @@
-const processPayment = items => {
+const processPayment = async items => {
   console.log(items)
-  return Promise.resolve(true)
+  return true
 }
 
 export default processPayment

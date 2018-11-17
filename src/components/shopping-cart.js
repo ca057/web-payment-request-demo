@@ -32,7 +32,14 @@ const ShoppingCart = ({
   return (
     <Fragment>
       <h2>Shopping Cart</h2>
-      {itemList.length === 0 && <p>Select items from the list above!</p>}
+      {itemList.length === 0 &&
+        <p>
+          Select
+          {' '}
+          <span aria-label='pastries' role='img'>🥐 🥐 🥐</span>
+          {' '}
+          from the list above!
+        </p>}
       {itemList.map(({ id, amount, name, total }) => (
         <p key={id}>{`${amount} x ${name} (${total}€)`}</p>
       ))}

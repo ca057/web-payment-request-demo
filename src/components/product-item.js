@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class ProductItem extends Component {
@@ -18,14 +18,13 @@ class ProductItem extends Component {
       <div className='product-item'>
         <p>{`${name} - ${price}€`}</p>
         <div>
-          <button
-            type='button'
-            disabled={!inSelection}
-            onClick={this.handleRemove}
-          >
-            - 1
+          {inSelection &&
+            <button type='button' onClick={this.handleRemove}>
+              <span aria-label={`remove one ${name}`} role='img'>➖</span>
+            </button>}
+          <button type='button' onClick={this.handleAdd}>
+            <span aria-label={`add one ${name}`} role='img'>➕</span>
           </button>
-          <button type='button' onClick={this.handleAdd}>+ 1</button>
         </div>
       </div>
     )
